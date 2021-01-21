@@ -45,11 +45,17 @@
     background: #333;
     color: #fff;
 }
+.btn-dark:hover {
+    background: #222;
+}
 
 .btn-light,
 .bg-light {
     background: #f4f4f4;
     color: #333;
+}
+.btn-light:hover {
+    background: #ccc;
 }
 
 .btn-outline {
@@ -74,10 +80,15 @@
 
 
 /* About solutions section */
-.flex-columns .row {
+.flex-columns .row,
+.flex-columns .row-1,
+.flex-columns .row-2,
+.flex-columns .row-3 {
     display: flex;
     width: 100%;
 }
+
+.flex-columns .row-2{flex-direction: row-reverse;}
 
 .flex-columns .column {
     display: flex;
@@ -200,7 +211,6 @@
 
 .flex-items img {
     width: 90%;
-    height: auto;
     border-radius: 50%;
     margin-bottom: 30px;
 }
