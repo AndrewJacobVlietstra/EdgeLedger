@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>EdgeLedger</title>
+        <title>Our Blog</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
         <link rel="stylesheet" href="resources/css/utilities.css">
         <link rel="stylesheet" href="resources/css/style.css">
@@ -15,9 +15,9 @@
     <body>
         
         <header class="hero blog_page">
-            <div class="navbar" id="navbar">
+            <div class="navbar top" id="navbar">
                 <h1 class="logo">
-                    <a href="#"><span class="text-primary"><i class="fas fa-book"></i> Edge</span>Ledger</a>
+                    <a href="index.html"><span class="text-primary"><i class="fas fa-book"></i> Edge</span>Ledger</a>
                 </h1>
 
                 <nav>
@@ -56,7 +56,7 @@
                                 Molestias hic necessitatibus atque quos quia exercitationem, 
                                 labore repellat harum autem! Saepe dolore aliquam inventore!
                             </p>
-                            <a href="#" class="btn btn-dark">Read More</a>
+                            <a href="post.html" class="btn btn-dark">Read More</a>
                         </div>
                     </div>
                 </div>
@@ -80,7 +80,7 @@
                                 Molestias hic necessitatibus atque quos quia exercitationem, 
                                 labore repellat harum autem! Saepe dolore aliquam inventore!
                             </p>
-                            <a href="#" class="btn btn-light">Read More</a>
+                            <a href="post.html" class="btn btn-light">Read More</a>
                         </div>
                     </div>
                 </div>
@@ -104,7 +104,7 @@
                                 Molestias hic necessitatibus atque quos quia exercitationem, 
                                 labore repellat harum autem! Saepe dolore aliquam inventore!
                             </p>
-                            <a href="#" class="btn btn-secondary btn-outline">Read More</a>
+                            <a href="post.html" class="btn btn-secondary btn-outline">Read More</a>
                         </div>
                     </div>
                 </div>
@@ -125,6 +125,26 @@
 
 
 
+        <script>
+            const navbar = document.getElementById('navbar');
+            let scrolled = false;
+    
+            window.onscroll = function() {
+                if(window.pageYOffset > 100) {
+                    navbar.classList.remove('top');
+                    if(!scrolled) {
+                        navbar.style.transform = 'translateY(-70px)';
+                    } 
+                    setTimeout(function(){
+                        navbar.style.transform = 'translateY(0px)';
+                        scrolled = true;
+                    }, 200);
+                } else {
+                    navbar.classList.add('top');
+                    scrolled = false;
+                }
+            }
+        </script>
     </body>
 
 

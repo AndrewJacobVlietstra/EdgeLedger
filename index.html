@@ -5,7 +5,9 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>EdgeLedger</title>
+        <link rel="icon" href="resources/images/favicon.png">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+        <link rel="stylesheet" href="resources/css/lightbox.css">
         <link rel="stylesheet" href="resources/css/utilities.css">
         <link rel="stylesheet" href="resources/css/style.css">
     </head>
@@ -14,10 +16,10 @@
 
     <body>
         
-        <header class="hero">
-            <div class="navbar" id="navbar">
+        <header id="home" class="hero">
+            <div class="navbar top" id="navbar">
                 <h1 class="logo">
-                    <a href="#"><span class="text-primary"><i class="fas fa-book"></i> Edge</span>Ledger</a>
+                    <a href="index.html"><span class="text-primary"><i class="fas fa-book"></i> Edge</span>Ledger</a>
                 </h1>
 
                 <nav>
@@ -34,6 +36,9 @@
                 <h1>The Sky Is The Limit</h1>
                 <p>We provide world class financial assistance.</p>
                 <a href="#about" class="btn btn-primary"><i class="fas fa-chevron-right"></i> Read More</a>
+            </div>
+            <div class="back-to-top">
+                <a href="#home"><i class="fas fa-arrow-up"></i></a>
             </div>
         </header>
 
@@ -106,20 +111,20 @@
                 </header>
                 <div class="row">
                     <div class="column">
-                        <img src="resources/images/cases/cases1.jpg" alt="case 1">
-                        <img src="resources/images/cases/cases2.jpg" alt="case 2">
+                        <a href="resources/images/cases/cases1.jpg" data-lightbox="cases"><img src="resources/images/cases/cases1.jpg" alt="case 1"></a>
+                        <a href="resources/images/cases/cases2.jpg" data-lightbox="cases"><img src="resources/images/cases/cases2.jpg" alt="case 2"></a>
                     </div>
                     <div class="column">
-                        <img src="resources/images/cases/cases3.jpg" alt="case 3">
-                        <img src="resources/images/cases/cases4.jpg" alt="case 4">
+                        <a href="resources/images/cases/cases3.jpg" data-lightbox="cases"><img src="resources/images/cases/cases3.jpg" alt="case 3"></a>
+                        <a href="resources/images/cases/cases4.jpg" data-lightbox="cases"><img src="resources/images/cases/cases4.jpg" alt="case 4"></a>
                     </div>
                     <div class="column">
-                        <img src="resources/images/cases/cases5.jpg" alt="case 5">
-                        <img src="resources/images/cases/cases6.jpg" alt="case 6">
+                        <a href="resources/images/cases/cases5.jpg" data-lightbox="cases"><img src="resources/images/cases/cases5.jpg" alt="case 5"></a>
+                        <a href="resources/images/cases/cases6.jpg" data-lightbox="cases"><img src="resources/images/cases/cases6.jpg" alt="case 6"></a>
                     </div>
                     <div class="column">
-                        <img src="resources/images/cases/cases7.jpg" alt="case 7">
-                        <img src="resources/images/cases/cases8.jpg" alt="case 8">
+                        <a href="resources/images/cases/cases7.jpg" data-lightbox="cases"><img src="resources/images/cases/cases7.jpg" alt="case 7"></a>
+                        <a href="resources/images/cases/cases8.jpg" data-lightbox="cases"><img src="resources/images/cases/cases8.jpg" alt="case 8"></a>
                     </div>
                 </div>
             </section>
@@ -215,6 +220,7 @@
                     <a href="#"><i class="fab fa-twitter"></i></a>
                     <a href="#"><i class="fab fa-youtube"></i></a>
                     <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/AndrewJacobVlietstra/EdgeLedger" target="_blank"><i class="fab fa-github"></i></a>
                 </div>
                 <p>Copyright &copy; 2021 EdgeLedger. All Rights Reserved.</p>
             </footer>
@@ -222,7 +228,28 @@
         </main>
 
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    <script src="resources/js/lightbox.js"></script>
+    <script>
+        const navbar = document.getElementById('navbar');
+        let scrolled = false;
 
+        window.onscroll = function() {
+            if(window.pageYOffset > 700) {
+                navbar.classList.remove('top');
+                if(!scrolled) {
+                    navbar.style.transform = 'translateY(-70px)';
+                } 
+                setTimeout(function(){
+                    navbar.style.transform = 'translateY(0px)';
+                    scrolled = true;
+                }, 200);
+            } else {
+                navbar.classList.add('top');
+                scrolled = false;
+            }
+        }
+    </script>
     </body>
 
 

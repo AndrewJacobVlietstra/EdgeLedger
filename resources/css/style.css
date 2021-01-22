@@ -6,6 +6,10 @@
     padding: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Open Sans', sans-serif;
     background: #fff;
@@ -38,6 +42,7 @@ img {
 
 /* Navbar */
 .navbar {
+    position: fixed;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -48,6 +53,8 @@ img {
     height: 70px;
     top: 0px;
     padding: 0 30px;
+    font-size: 105%;
+    transition: all 0.5s ease-in;
 }
 
 .navbar ul {
@@ -69,6 +76,21 @@ img {
     font-weight: 400;
 }
 
+.navbar.top {
+    background: transparent;
+}
+
+.back-to-top a{
+    color: #fff;
+    padding: 10px 20px;
+    background: rgb(30, 30, 30, 0.8);
+    border-radius: 50%;
+    font-size: 200%;
+    position: fixed;
+    bottom: 1.5%;
+    right: 1.5%;
+    transition: all 0.2s;
+}
 
 /* Header */
 
@@ -178,6 +200,32 @@ img {
 }
 
 
+/* Post Section */
+.post {
+    padding: 50px 30px;
+}
+
+.post h2 {
+    font-size: 40px;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #bbb;
+}
+
+.post .meta {
+    margin-bottom: 30px;
+}
+
+.post img {
+    width: 300px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 30px;
+}
+
+
+
+
 /* Footer Section */
 
 .footer {
@@ -186,7 +234,7 @@ img {
     align-items: center;
     justify-content: center;
     text-align: center;
-    height: 120px;
+    height: 150px;
 }
 
 .footer p {
@@ -222,6 +270,9 @@ img {
         flex-direction: column;
         height: 130px;
         padding: 18px;
+    }
+    .navbar a {
+        padding: 10px 15px;
     }
 
     .flex-icons {
